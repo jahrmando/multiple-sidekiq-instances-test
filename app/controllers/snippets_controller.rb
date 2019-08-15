@@ -10,7 +10,7 @@ class SnippetsController < ApplicationController
   def create
     @snippet = Snippet.new(snippet_params)
     if @snippet.save
-      DefaultJob.perform_later(@snippet)
+      DefaultJob.perform_later
       redirect_to @snippet
     else
       render :new

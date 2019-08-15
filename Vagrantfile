@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 # Configuration
-$worker_num_instances = 6
+$worker_num_instances = 2
 $worker_memory = 768
 $web_memory = 768
 # End configuration
@@ -14,7 +14,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Web instance
   config.vm.define "web" do |web|
     web.vm.hostname = "rails-sidekiq-web"
-    web.vm.box = "ubuntu/trusty64"
+    #web.vm.box = "ubuntu/trusty64"
+    web.vm.box = "bento/ubuntu-14.04"
 
     web.vm.network :private_network, ip: "10.10.150.10"
 
@@ -36,7 +37,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   (1..$worker_num_instances).each do |i|
     config.vm.define "worker-%02d" % i do |worker|
       worker.vm.hostname = "rails-sidekiq-worker-%02d" % i
-      worker.vm.box = "ubuntu/trusty64"
+      #worker.vm.box = "ubuntu/trusty64"
+      worker.vm.box = "bento/ubuntu-14.04"
 
       worker.vm.network :private_network, ip: "10.10.150.1%02d" % i
 
