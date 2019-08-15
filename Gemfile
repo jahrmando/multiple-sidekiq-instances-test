@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
+gem 'sidekiq-limit_fetch'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -41,5 +42,6 @@ group :development, :test do
 end
 
 gem 'sidekiq'
+gem 'sidekiq-limit_fetch'
 gem 'sinatra', require: false
 gem 'slim'

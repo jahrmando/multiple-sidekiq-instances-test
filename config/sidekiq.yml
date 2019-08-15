@@ -3,4 +3,10 @@
 :queues:
   - [critical, 10]
   - default
+  - analytics
   - low
+:process_limits:
+  analytics: 2
+:limits:
+  analytics: 8
+
