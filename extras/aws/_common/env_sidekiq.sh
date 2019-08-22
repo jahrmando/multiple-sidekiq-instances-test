@@ -1,0 +1,1 @@
+export SIDEKIQ_REDIS="10.10.150.10:7379"

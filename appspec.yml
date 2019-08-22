@@ -1,0 +1,28 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /export/sidekiq
+  - source: /extras/aws/_common/env_sidekiq.sh
+    destination: /etc/profile.d/
+hooks:
+  BeforeInstall:
+    - location: extras/aws/_common/install.sh
+      runas: root
+    - location: extras/aws/_common/start.sh
+      runas: root
+  # AfterInstall:
+  #   - location: Scripts/RunResourceTests.sh
+  #     timeout: 180
+  ApplicationStart:
+    - location: extras/aws/worker/start.sh
+      timeout: 3600
+      runas: deploy
+  # ValidateService:
+  #   - location: Scripts/MonitorService.sh
+  #     timeout: 3600
+  #     runas: deploy
+  ApplicationStop:
+    - location: extras/aws/worker/stop.sh
+      timeout: 300
+      runas: root
