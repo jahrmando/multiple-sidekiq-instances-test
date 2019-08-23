@@ -12,7 +12,7 @@ hooks:
     - location: extras/aws/_common/rvm_ruby.sh
       runas: root
     - location: extras/aws/_common/start.sh
-      runas: root
+      runas: deploy
   # AfterInstall:
   #   - location: Scripts/RunResourceTests.sh
   #     timeout: 180
