@@ -9,10 +9,9 @@ hooks:
   BeforeInstall:
     - location: extras/aws/_common/install.sh
     - location: extras/aws/_common/rvm_ruby.sh
-  Install:
-    - location: extras/aws/_common/load.sh
-      runas: deploy
   AfterInstall:
+    - location: extras/aws/_common/load.sh
+    runas: deploy
     - location: extras/aws/_common/test.sh
       timeout: 180
   ApplicationStart:
