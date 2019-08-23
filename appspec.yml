@@ -2,17 +2,18 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /export/sidekiq
+    destination: /opt/sidekiq
   - source: /extras/aws/_common/env_sidekiq.sh
     destination: /etc/profile.d/
 hooks:
   BeforeInstall:
     - location: extras/aws/_common/install.sh
       runas: root
-    - location: extras/aws/_common/rvm_ruby.sh
-      runas: root
-    - location: extras/aws/_common/start.sh
-      runas: deploy
+    # - location: extras/aws/_common/rvm_ruby.sh
+    #   runas: root
+  # Install:
+  #   - location: extras/aws/_common/load.sh
+  #     runas: deploy
   # AfterInstall:
   #   - location: Scripts/RunResourceTests.sh
   #     timeout: 180

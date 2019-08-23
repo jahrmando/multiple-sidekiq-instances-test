@@ -15,8 +15,8 @@ curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 curl -sSL https://get.rvm.io | bash -s stable
 usermod -a -G rvm `whoami`
 
-adduser --system --shell /bin/bash --home /export/sidekiq --quiet deploy
+adduser --system --shell /bin/bash --home /home/deploy --quiet deploy
 # Make directories
-mkdir -p /export/sidekiq
-chown deploy -R /export/sidekiq
+# mkdir -p /opt/sidekiq
+chown deploy -R /opt/sidekiq
 usermod -a -G rvm deploy
