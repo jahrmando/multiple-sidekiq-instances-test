@@ -1,5 +1,5 @@
 #!/bin/bash
 source /etc/profile.d/rvm.sh
 
-cd /export/sidekiq
+cd /opt/sidekiq
 bundle --path vendor/bundle
