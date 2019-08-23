@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf /opt/sidekiq/vendor
 # apt-get -y update
 apt-get -y install htop build-essential zlib1g-dev curl git-core sqlite3 libsqlite3-dev gnupg
 apt-get -y install nodejs
@@ -18,5 +19,4 @@ usermod -a -G rvm `whoami`
 adduser --system --shell /bin/bash --home /home/deploy --quiet deploy
 # Make directories
 # mkdir -p /opt/sidekiq
-chown deploy -R /opt/sidekiq
 usermod -a -G rvm deploy
