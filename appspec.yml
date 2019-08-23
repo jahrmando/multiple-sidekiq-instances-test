@@ -9,6 +9,8 @@ hooks:
   BeforeInstall:
     - location: extras/aws/_common/install.sh
       runas: root
+    - location: extras/aws/_common/rvm_ruby.sh
+      runas: root
     - location: extras/aws/_common/start.sh
       runas: root
   # AfterInstall:
