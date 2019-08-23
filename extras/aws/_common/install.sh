@@ -1,7 +1,5 @@
 #!/bin/bash
-rm -rf /opt/sidekiq/vendor
-rm -rf /opt/sidekiq/log || mkdir /opt/sidekiq/log
-rm -rf /opt/sidekiq/tmp || mkdir /opt/sidekiq/tmp
+rm -rf /opt/sidekiq/vendor/bundle
 
 # apt-get -y update
 apt-get -y install htop build-essential zlib1g-dev curl git-core sqlite3 libsqlite3-dev gnupg
