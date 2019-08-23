@@ -14,9 +14,9 @@ hooks:
   # Install:
   #   - location: extras/aws/_common/load.sh
   #     runas: deploy
-  # AfterInstall:
-  #   - location: Scripts/RunResourceTests.sh
-  #     timeout: 180
+  AfterInstall:
+    - location: extras/aws/_common/test.sh
+      timeout: 180
   ApplicationStart:
     - location: extras/aws/worker/start.sh
       timeout: 3600
