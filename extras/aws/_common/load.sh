@@ -1,7 +1,7 @@
 #!/bin/bash
 source /etc/profile.d/rvm.sh
 
-mkdir /opt/sidekiq/log
-mkdir /opt/sidekiq/tmp
+rm -rf /opt/sidekiq/log && mkdir /opt/sidekiq/log
+rm -rf /opt/sidekiq/tmp && mkdir /opt/sidekiq/tmp
 
 cd /opt/sidekiq && bundle --path vendor/bundle
